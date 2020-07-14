@@ -1,24 +1,11 @@
-# README
+# Cloud Run Rails6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+docker build -t cloud_run_rails:0.0.1 .
 
-Things you may want to cover:
+docker run -d -it -p  3000:3000 cloud_run_rails:0.0.1
 
-* Ruby version
+docker tag cloud_run_rails:0.0.1 us.gcr.io/${GOOGLE_CLOUD_PROJECT}/cloud_run_rails:0.0.1
 
-* System dependencies
+docker push us.gcr.io/${GOOGLE_CLOUD_PROJECT}/cloud_run_rails:0.0.1
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+terraform apply -var-file=prod.tfvars

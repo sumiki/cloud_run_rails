@@ -1,0 +1,4 @@
+project_name="project_name"
+credentials_path="credentials_path.json"
+cloud_run_name="cloudrunrails"
+docker_image_path="us.gcr.io/xxxxxx/cloud_run_rails@sha256:xxxxxxxxx"
